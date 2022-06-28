@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => 'noreply@domain.tld',
-        'name'    => 'Winter CMS',
+        'name' => 'Winter CMS',
     ],
 
     /*
@@ -111,18 +111,20 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Log Channel
-    |--------------------------------------------------------------------------
-    |
-    | If you are using the "log" driver, you may specify the logging channel
-    | if you prefer to keep mail messages separate from other log entries
-    | for simpler reading. Otherwise, the default channel will be used.
-    |
-    */
-
-    // 'log_channel' => env('MAIL_LOG_CHANNEL'),
-
+    'default' => env('MAIL_MAILER', null),
+    'mailers' => [
+        'smtp' => [
+            'encryption' => env('MAIL_ENCRYPTION', null),
+            'host' => env('MAIL_HOST', null),
+            'password' => env('MAIL_PASSWORD', ''),
+            'port' => env('MAIL_PORT', null),
+            'username' => env('MAIL_USERNAME', ''),
+        ],
+        'sendmail' => [
+            'path' => env('MAIL_SENDMAIL_PATH', null),
+        ],
+        'log' => [
+            'channel' => env('MAIL_LOG_CHANNEL', null),
+        ],
+    ],
 ];

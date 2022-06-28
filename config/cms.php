@@ -1,58 +1,61 @@
 <?php
 
 return [
+    'fileDefinitions' => [
+        'defaultExtensions' => [
 
-	'fileDefinitions' => [
-		'defaultExtensions' => [
-			// your new custom extensions
-			'json',
-			// defaults
-			'jpg',
-			'jpeg',
-			'bmp',
-			'png',
-			'webp',
-			'gif',
-			'svg',
-			'js',
-			'map',
-			'ico',
-			'css',
-			'less',
-			'scss',
-			'ics',
-			'odt',
-			'doc',
-			'docx',
-			'ppt',
-			'pptx',
-			'pdf',
-			'swf',
-			'txt',
-			'xml',
-			'ods',
-			'xls',
-			'xlsx',
-			'eot',
-			'woff',
-			'woff2',
-			'ttf',
-			'flv',
-			'wmv',
-			'mp3',
-			'ogg',
-			'wav',
-			'avi',
-			'mov',
-			'mp4',
-			'mpeg',
-			'webm',
-			'mkv',
-			'rar',
-			'xml',
-			'zip',
-		]
-	],
+            // your new custom extensions
+
+            'json',
+
+            // defaults
+
+            'jpg',
+            'jpeg',
+            'bmp',
+            'png',
+            'webp',
+            'gif',
+            'svg',
+            'js',
+            'map',
+            'ico',
+            'css',
+            'less',
+            'scss',
+            'ics',
+            'odt',
+            'doc',
+            'docx',
+            'ppt',
+            'pptx',
+            'pdf',
+            'swf',
+            'txt',
+            'xml',
+            'ods',
+            'xls',
+            'xlsx',
+            'eot',
+            'woff',
+            'woff2',
+            'ttf',
+            'flv',
+            'wmv',
+            'mp3',
+            'ogg',
+            'wav',
+            'avi',
+            'mov',
+            'mp4',
+            'mpeg',
+            'webm',
+            'mkv',
+            'rar',
+            'xml',
+            'zip',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -143,7 +146,7 @@ return [
     |
     */
 
-    'backendSkin' => 'Backend\Skins\Standard',
+    'backendSkin' => 'Backend\\Skins\\Standard',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,7 +172,11 @@ return [
     |
     */
 
-    'loadModules' => ['System', 'Backend', 'Cms'],
+    'loadModules' => [
+        'System',
+        'Backend',
+        'Cms',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -208,7 +215,7 @@ return [
     |
     */
 
-    'enableRoutesCache' => false,
+    'enableRoutesCache' => env('ROUTES_CACHE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -248,7 +255,7 @@ return [
     |
     */
 
-    'enableAssetCache' => false,
+    'enableAssetCache' => env('ASSET_CACHE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -302,7 +309,7 @@ return [
     |
     */
 
-    'databaseTemplates' => false,
+    'databaseTemplates' => env('DATABASE_TEMPLATES', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -364,26 +371,22 @@ return [
     */
 
     'storage' => [
-
         'uploads' => [
-            'disk'            => 'local',
-            'folder'          => 'uploads',
-            'path'            => '/storage/app/uploads',
+            'disk' => 'local',
+            'folder' => 'uploads',
+            'path' => '/storage/app/uploads',
             'temporaryUrlTTL' => 3600,
         ],
-
         'media' => [
-            'disk'   => 'local',
+            'disk' => 'local',
             'folder' => 'media',
-            'path'   => '/storage/app/media',
+            'path' => '/storage/app/media',
         ],
-
         'resized' => [
-            'disk'   => 'local',
+            'disk' => 'local',
             'folder' => 'resized',
-            'path'   => '/storage/app/resized',
+            'path' => '/storage/app/resized',
         ],
-
     ],
 
     /*
@@ -412,7 +415,7 @@ return [
     |
     */
 
-    'linkPolicy' => 'detect',
+    'linkPolicy' => env('LINK_POLICY', 'detect'),
 
     /*
     |--------------------------------------------------------------------------
@@ -423,7 +426,10 @@ return [
     |
     */
 
-    'defaultMask' => ['file' => null, 'folder' => null],
+    'defaultMask' => [
+        'file' => null,
+        'folder' => null,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -448,7 +454,7 @@ return [
     |
     */
 
-    'enableCsrfProtection' => true,
+    'enableCsrfProtection' => env('ENABLE_CSRF', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -518,5 +524,4 @@ return [
     */
 
     'enableBackendServiceWorkers' => false,
-
 ];

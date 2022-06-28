@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://realtalk.denglischdocs',
+    'url' => env('APP_URL', 'localhost:8001'),
 
     /*
     |--------------------------------------------------------------------------
@@ -214,8 +214,7 @@ return [
     |
     */
 
-    'key' => 'm5lF1g049CLgFPoyhdC6twjCzsIBZmUc',
-
+    'key' => env('APP_KEY', 'wRJxwtu0WbbnLuwZ98NP7zsFVsASKiLl'),
     'cipher' => 'AES-256-CBC',
 
     /*
@@ -233,7 +232,7 @@ return [
 
         // 'Illuminate\Html\HtmlServiceProvider', // Example
 
-        'System\ServiceProvider',
+        'System\\ServiceProvider',
     ]),
 
     /*
@@ -268,9 +267,6 @@ return [
     */
 
     'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
-
         // 'Str' => 'Illuminate\Support\Str', // Example
-
     ]),
-
 ];
