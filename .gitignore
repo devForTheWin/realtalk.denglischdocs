@@ -1,7 +1,6 @@
 # Composer ignores
 /vendor
 composer.phar
-composer.lock
 /node_modules
 
 # Framework ignores
@@ -34,4 +33,3 @@ package-lock.json
 
 # Ignore generated public directory from `winter:mirror public`
 public
-/node_modules
