@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'default' => 'file',
+    'default' => env('CACHE_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -35,26 +35,21 @@ return [
     */
 
     'stores' => [
-
         'apc' => [
             'driver' => 'apc',
         ],
-
         'array' => [
             'driver' => 'array',
         ],
-
         'database' => [
-            'driver'     => 'database',
-            'table'      => 'cache',
+            'driver' => 'database',
+            'table' => 'cache',
             'connection' => null,
         ],
-
         'file' => [
             'driver' => 'file',
-            'path'   => storage_path('framework/cache'),
+            'path' => storage_path('framework/cache'),
         ],
-
         'memcached' => [
             'driver' => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
@@ -73,21 +68,18 @@ return [
                 ],
             ],
         ],
-
         'redis' => [
-            'driver'     => 'redis',
+            'driver' => 'redis',
             'connection' => 'default',
         ],
-
         'dynamodb' => [
-            'driver'   => 'dynamodb',
-            'key'      => env('AWS_ACCESS_KEY_ID'),
-            'secret'   => env('AWS_SECRET_ACCESS_KEY'),
-            'region'   => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'table'    => env('DYNAMODB_CACHE_TABLE', 'cache'),
+            'driver' => 'dynamodb',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+            'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
             'endpoint' => env('DYNAMODB_ENDPOINT'),
         ],
-
     ],
 
     /*
@@ -138,5 +130,4 @@ return [
     */
 
     'disableRequestCache' => null,
-
 ];

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'sqlite',
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,60 +44,68 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
-            'driver'                  => 'sqlite',
+            'driver' => 'sqlite',
+
             // 'url'                  => env('DATABASE_URL'),
-            'database'                => base_path('storage/database.sqlite'),
-            'prefix'                  => '',
+
+            'database' => env('DB_DATABASE', '/home/wdarins/projects/realtalk.denglischdocs/storage/database.sqlite'),
+            'prefix' => '',
             'foreign_key_constraints' => true,
         ],
-
         'mysql' => [
-            'driver'         => 'mysql',
-            // 'url'         => env('DATABASE_URL'),
-            'engine'         => 'InnoDB',
-            'host'           => '127.0.0.1',
-            'port'           => 3306,
-            'database'       => 'database',
-            'username'       => 'root',
-            'password'       => '',
-            'charset'        => 'utf8mb4',
-            'collation'      => 'utf8mb4_unicode_ci',
-            'prefix'         => '',
-            'prefix_indexes' => true,
-            'strict'         => true,
-            'varcharmax'     => 191,
-        ],
+            'driver' => 'mysql',
 
+            // 'url'         => env('DATABASE_URL'),
+
+            'engine' => 'InnoDB',
+            'host' => env('DB_HOST'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'varcharmax' => 191,
+        ],
         'pgsql' => [
-            'driver'         => 'pgsql',
-            // 'url'         => env('DATABASE_URL'),
-            'host'           => '127.0.0.1',
-            'port'           => 5432,
-            'database'       => 'database',
-            'username'       => 'root',
-            'password'       => '',
-            'charset'        => 'utf8',
-            'prefix'         => '',
-            'prefix_indexes' => true,
-            'schema'         => 'public',
-            'sslmode'        => 'prefer',
-        ],
+            'driver' => 'pgsql',
 
+            // 'url'         => env('DATABASE_URL'),
+
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', 5432),
+            'database' => env('DB_DATABASE', 'database'),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
         'sqlsrv' => [
-            'driver'         => 'sqlsrv',
+            'driver' => 'sqlsrv',
+
             // 'url'         => env('DATABASE_URL'),
-            'host'           => '127.0.0.1',
-            'port'           => 1433,
-            'database'       => 'database',
-            'username'       => 'root',
-            'password'       => '',
-            'charset'        => 'utf8',
-            'prefix'         => '',
+
+            'host' => '127.0.0.1',
+            'port' => 1433,
+            'database' => 'database',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'prefix' => '',
             'prefix_indexes' => true,
         ],
-
+        'redis' => [
+            'host' => env('REDIS_HOST', null),
+            'password' => env('REDIS_PASSWORD', ''),
+            'port' => env('REDIS_PORT', null),
+        ],
     ],
 
     /*
@@ -125,22 +133,19 @@ return [
     */
 
     'redis' => [
-
         'client' => 'predis',
-
         'options' => [
             'cluster' => 'redis',
-            'prefix'  => '',
+            'prefix' => '',
         ],
-
         'default' => [
+
             // 'url'   => env('REDIS_URL'),
-            'host'     => '127.0.0.1',
+
+            'host' => '127.0.0.1',
             'password' => null,
-            'port'     => 6379,
+            'port' => 6379,
             'database' => 0,
         ],
-
     ],
-
 ];
