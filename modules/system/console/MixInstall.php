@@ -4,7 +4,7 @@ use File;
 use Config;
 use Cms\Classes\Theme;
 use Winter\Storm\Support\Str;
-use Illuminate\Console\Command;
+use Winter\Storm\Console\Command;
 use Symfony\Component\Process\Process;
 use System\Classes\MixAssets;
 use System\Classes\PluginManager;
@@ -13,24 +13,22 @@ use Symfony\Component\Process\Exception\ProcessSignaledException;
 class MixInstall extends Command
 {
     /**
-     * @var string The console command name.
+     * @var string|null The default command name for lazy loading.
      */
-    protected $name = 'mix:install';
+    protected static $defaultName = 'mix:install';
 
     /**
-     * @var string The console command description.
-     */
-    protected $description = 'Install Node.js dependencies required for mixed assets';
-
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
+     * @var string The name and signature of this command.
      */
     protected $signature = 'mix:install
         {npmArgs?* : Arguments to pass through to the "npm" binary}
         {--npm= : Defines a custom path to the "npm" binary}
         {--p|package=* : Defines one or more packages to install}';
+
+    /**
+     * @var string The console command description.
+     */
+    protected $description = 'Install Node.js dependencies required for mixed assets';
 
     /**
      * @var string The path to the "npm" executable.
@@ -41,6 +39,19 @@ class MixInstall extends Command
      * @var string Default version of Laravel Mix to install
      */
     protected $defaultMixVersion = '^6.0.41';
+
+    /**
+     * @return array Terms used in messages.
+     */
+    protected $terms = [
+        'complete' => 'install',
+        'completed' => 'installed',
+    ];
+
+    /**
+     * @var string The NPM command to run.
+     */
+    protected $npmCommand = 'install';
 
     /**
      * Execute the console command.
@@ -188,9 +199,9 @@ class MixInstall extends Command
         }
 
         if ($this->installPackageDeps() !== 0) {
-            $this->error('Unable to install dependencies.');
+            $this->error("Unable to {$this->terms['complete']} dependencies.");
         } else {
-            $this->info('Dependencies successfully installed!');
+            $this->info("Dependencies successfully {$this->terms['completed']}!");
         }
 
         return 0;
@@ -204,9 +215,9 @@ class MixInstall extends Command
     protected function installPackageDeps()
     {
         $command = $this->argument('npmArgs') ?? [];
-        array_unshift($command, 'npm', 'i');
+        array_unshift($command, 'npm', $this->npmCommand);
 
-        $process = new Process($command, base_path());
+        $process = new Process($command, base_path(), null, null, null);
 
         // Attempt to set tty mode, catch and warn with the exception message if unsupported
         try {
