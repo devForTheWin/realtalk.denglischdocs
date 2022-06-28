@@ -1,0 +1,11 @@
+plugin:
+    name: 'at.menu::lang.plugin.name'
+    description: 'at.menu::lang.plugin.description'
+    author: AT
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: RealTalk
+        url: /cms/themeoptions/update/realtalk.denglischdocs
+        icon: icon-angellist

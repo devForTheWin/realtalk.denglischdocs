@@ -1,0 +1,115 @@
+.footer {
+	width: 100%;
+	position: relative;
+	top: 9em;
+	padding-top: 0;
+	margin-bottom: 136px;
+}
+
+.footer-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footer__about-realTalk {
+	margin-top: 5px;
+}
+
+.footer-copyright {
+	margin-top: 9.7px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 140%;
+	letter-spacing: 0.02em;
+	color: #000000;
+}
+
+.footer-text {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	letter-spacing: 0.02em;
+	color: #303030;
+	margin-bottom: 5px;
+}
+
+.footer__links-bar {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer__links-pages {
+	display: flex;
+	flex-direction: row;
+	gap: 0 64px;
+}
+
+.footer__title {
+	margin-bottom: 10px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: 0.02em;
+	color: #000000;
+}
+
+.footer__social-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	gap: 8px;
+	margin-top: 33px;
+}
+
+.footer__links-pages a {
+	font-size: 12px;
+}
+
+.line {
+	width: 1140px;
+	border: 0.5px solid #D5D8DA;
+}
+
+.footer__footer {
+	margin-top: 26px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footer-copyright span img {
+	width: 21px;
+	height: 21px;
+}
+
+.footer__partners {
+	display: flex;
+	flex-direction: row;
+	gap: 42px;
+}
+
+.footer__partner-paper {
+	width: 43px;
+	height: 35px;
+	mix-blend-mode: luminosity;
+}
+
+.footer__partner-gdpr {
+	height: 30px;
+	width: 89px;
+	border-radius: 0px;
+}
+
+.footer__partner-bootstrap {
+	width: 133px;
+	height: 25px;
+}

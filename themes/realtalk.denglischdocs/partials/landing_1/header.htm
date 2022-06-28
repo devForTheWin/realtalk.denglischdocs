@@ -1,0 +1,57 @@
+description = "Default layout"
+useContent = 1
+default = 0
+==
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>{{this.theme.logo_text}}</title>
+	<meta name="description" content="{{this.theme.logo_text}}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	{# <link rel="icon" href=""> #}
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&display=swap" rel="stylesheet">
+		
+	<link href="{{ 'assets/css/theme.min.css' | theme }}" rel="stylesheet">
+	{# Uncomment to view plugins CSS assets for preprocessor styles import
+	{% styles %}
+	#}
+
+</head>
+<body>
+<div class="wrapper">
+	<div class="header">
+		<div class="container-xxl">
+			<div class="header-content">
+				<div class="header-logo">
+					<img src="{{this.theme.logo_image | media}}" alt="{{this.theme.logo_text}}">
+				</div>
+				<div class="main-navigation">
+					<div class="lang-switcher">
+						<a class="lang-switcher__item lang-item	lang-item-en current-lang" href="#">EN</a>
+						<div class="lang-switcher__divider"></div>
+						<a class="lang-switcher__item lang-item lang-item-de" href="#">DE</a>
+					</div>
+					<ul class="items-menu">
+						<li class="item-menu common-btn btn-how">
+							<a href="#work">How it works</a>
+						</li>
+						<li class="item-menu common-btn btn-apply">
+							<a href="#apply">Apply to participate</a>
+						</li>
+						<li class="item-menu">
+							<a href="#mission">About us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+

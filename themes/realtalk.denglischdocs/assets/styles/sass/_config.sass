@@ -1,0 +1,127 @@
+// USER VARIABLES SECTION
+
+$accent: #FFBA0A // Accent Color
+$fontsize: 21px // Body Font Size
+$textcolor: #303030 // Text Color
+$howBackground: #FFFBF1 //how does it work -block
+$lineheight: 1.65 // Document Line Height
+$userfont: montserrat, sans-serif // User Font Family
+$width: 1140px
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+$container-padding-x: 0
+
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)
+$container-max-widths:(sm: 540px, md: 720px, lg: 1130px, xl: 1139px, xxl: 1140px)
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/swiper/swiper-bundle'
+@import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+// @import 'node_modules/normalize.css/normalize.css' // npm i --save-dev normalize.css
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+// font-family: 'Crimson Pro', serif; font-family: 'Montserrat', sans-serif;
+@include font('crimson-pro', normal, 200, '../fonts/CrimsonPro-ExtraLight.woff2')
+@include font('montserrat', normal, 400, '../fonts/Montserrat-Regular.woff2')
+@include font('montserrat', normal, 500, '../fonts/Montserrat-Medium.woff2')
+
+// GENERAL CSS SETTINGS
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
+body,
+html 
+	min-height: 100%
+
+
+::placeholder 
+	width: 151px
+	height: 20px
+	font-family: 'Montserrat'
+	font-style: normal
+	font-weight: 400
+	font-size: 13px
+	line-height: 20px
+	letter-spacing: 0.01em
+	color: #727272
+
+
+a 
+	text-decoration: none
+	color: #000000
+
+
+img 
+	width: 100%
+
+
+input,
+textarea 
+	outline: none
+
+
+.overflow 
+	overflow: hidden
+	position: absolute
+	border-radius: 12px
+
+
+.text 
+	font-family: 'Crimson Pro', serif
+	font-style: normal
+	font-weight: 200
+	font-size: 21px
+	line-height: 27.3px
+	letter-spacing: 0.01em
+	color: rgba(48, 48, 48, 1)
+
+
+.title 
+	height: 46px
+	font-family: 'Montserrat'
+	font-style: normal
+	font-weight: 400
+	font-size: 33px
+	line-height: 46.2px
+	color: #000000
+
+
+.wrapper 
+	min-height: 100%
+	position: relative
+	width: 100%

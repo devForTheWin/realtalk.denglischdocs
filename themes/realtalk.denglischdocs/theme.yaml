@@ -1,0 +1,99 @@
+name: 'RealTalk'
+description: 'RealTalk'
+author: ''
+homepage: ''
+code: ''
+
+form:
+  tabs:
+    fields:
+      logo_text:
+        label: RealTalk
+        span: auto
+        comment: Project name
+        tab: Main
+      logo_image:
+        label: logo
+        type: mediafinder
+        mode: image
+        tab: Main
+        span: auto
+      hero_video_title:
+        label: Hero Block
+        span: auto
+        comment: Title Hero
+        tab: Main
+      hero_vider_description:
+        label: Hero Block
+        span: auto
+        comment: Description Hero
+        type: textarea
+        tab: Main
+      hero_video:
+        label: Main vidoe 
+        type: mediafinder
+        mode: image
+        tab: Main
+        span: auto
+      soc:
+        label: Social Networks
+        comment: Social Links
+        type: repeater
+        span: auto
+        tab: Links
+        form:
+          fields:
+            image:
+              label: icon
+              type: mediafinder
+              mode: image
+              span: auto
+              imageWidth: 100
+            link:
+              label: link to page
+              span: auto
+      links:
+        label: Links to third party sites
+        comment: Social Links
+        type: repeater
+        span: auto
+        tab: Links
+        form:
+          fields:
+            link:
+             link_title: Link name
+             label: Links to third party sites
+             comment: Project name       
+             span: auto
+            link_url:
+              label: link to page
+              span: auto
+      blocks_photo:
+        label: Peer to Peer
+        tab: Sections
+    
+      first_slider:
+        label: First Slider
+        type: repeater
+        tab: sliders
+        span: auto
+        form:
+          fields:
+            image:
+              label: Image
+              type: mediafinder
+              mode: image
+      second_slider:
+        label: Second Slider
+        type: repeater
+        tab: sliders
+        span: auto
+        form:
+          fields:
+            image:
+              label: Image
+              type: mediafinder
+              mode: image
+      
+     
+
