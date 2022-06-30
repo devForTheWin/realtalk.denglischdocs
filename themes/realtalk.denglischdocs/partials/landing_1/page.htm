@@ -93,7 +93,7 @@
 						<h2 class="title" style="margin-bottom: 25px">And all of this for free!</h2>
 						<h2 class="title" style="margin-bottom: 25px">- Like, free free?</h2>
 						<h2 class="title" style="margin-bottom: 25px; margin-left: 20px;">- Yes, absolutely and <span
-								style="text-transform: uppercase; color: #FFBA0A"> forever free</span>.</h2>
+								style="text-transform: uppercase; color: #FFBA0A; font-weight: 500;"> forever free</span>.</h2>
 					</div>
 				</div>
 			</div>
@@ -104,7 +104,7 @@
 						<div class="swiper-wrapper">
 						{% for field in this.theme.first_slider %}
 							<div class="swiper-slide slider__item">
-								<img class="slider__img" data-swiper-parallax="20%" src='{{field.image | media }}'	alt="slider">
+								<img class="slider__img" src='{{field.image | media }}'	alt="slider">
 							</div>
 						{% endfor %}
 						</div>
@@ -113,7 +113,7 @@
 			</div>
 		</div>
 		<!-- Bringing abroad home BLOCK-->
-		<section class="abroad" style='background-image: url( "{{'assets/images/Plane2.svg' | theme}}");'>
+		<section id="abroad" class="abroad" style='background-image: url( "{{'assets/images/Plane2.svg' | theme}}");'>
 			<div class="container-xxl">
 				<div class="abroad-description__block">
 					<h2 class="title">Bringing abroad home</h2>
@@ -134,8 +134,8 @@
 
 						<p>
 							Now, thanks to Real Talk, they do.<br>
-							<div class="revel">
-								<img src="{{'assets/images/icon/Marker.svg' | theme}}" alt="">
+							<div class="revel" id="revel">
+								<img src="{{'assets/images/icon/Marker2.svg' | theme}}" alt="">
 							</div>		
 						</p>
 					</div>
@@ -428,7 +428,7 @@
 						<p>Click below if you’re one of those who like to read.</p>
 					</div>
 					<button class="convinc-btn" id="convinc-btn">
-						Read more
+						<p>Read more</p>
 					</button>
 					<div class="convinc__read-more" style="display: none;" id="readMore">
 						<div class="convinc-text__first-block">
@@ -489,10 +489,10 @@
 
 						<div class="convinc__benefits-buttons">
 							<div class="benefits-btn" id="english">
-								<span>Benefits of English</span>
+								<a>Benefits of English</a>
 							</div>
 							<div class="benefits-btn"  id="german" style="background-color:#FFBA0A">
-								<span>Benefits of German</span>
+								<a>Benefits of German</a>
 							</div>
 						</div>
 					</div>
@@ -685,8 +685,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="text how-work__info-text"><span>And ta-da!<img class="cornet" src="{{'assets/images/Cornet.svg' | theme}}"
-							alt="">Thanks to structured and active collaboration, students interact</span><br>
+				<div class="text how-work__info-text"><span>And ta-da! 
+				<span class="cornet"><img class="cornet__img" src="{{'assets/images/Cornet.svg' | theme}}"
+							alt=""> </span>Thanks to structured and active collaboration, students interact</span><br>
 					through video chats, interactive lessons, webinars, and games using existing digital<br>
 					platforms, such as Zoom, BigBlueButton, or Google Meet.<span><img class="online"
 							src="{{'assets/images/Online_meeting.svg' | theme}}" alt=""></span><br>
@@ -736,8 +737,8 @@
 
 						<span class="real-talk__click-block" id="click-block">
 							Case examples
+							<span class="real-talk__arrow"></span>
 						</span>
-						<span class="real-talk__arrow"></span>
 
 						<div class="real-talk__toggle-content" style="display: none;">
 							<p>
@@ -868,7 +869,7 @@
 
 							<div class="step" data-step>
 								<div class="step2">
-									<div style="margin-bottom: 17px">
+									<div class="title__step">
 										Grade level of students
 									</div>
 									<div class="step2__options-block">
@@ -928,7 +929,7 @@
 										<span id="add-more-field">+ Add course</span>
 									</div>
 
-									<div class="multi-step__btn-box">
+									<div class="multi-step__btn-box next-btn">
 										<button class="multi-step__btn" data-next id="next" type="button">Next</button>
 									</div>
 								</div>
@@ -936,7 +937,7 @@
 
 							<div class="step" data-step>
 								<div class="step3">
-									<div style="margin-bottom: 12px;">Language proficiency in English</div>
+									<div class="title__step">Language proficiency in English</div>
 									<div class="step3__options-block">
 										<label class="option-step3_item">
 											<input type="checkbox" class="checkbox" name="english[]" id="beginner" value="A1: Beginner">
@@ -982,7 +983,7 @@
 										</label>
 									</div>
 
-									<div style="margin-bottom: 10px; margin-top: 20px;">Language proficiency in German</div>
+									<div class="title__step" style="margin-top: 20px;">Language proficiency in German</div>
 									<div class="step3__options-block">
 										<label class="option-step3_item">
 											<input type="checkbox" class="checkbox" name="german[]" value="A1: Beginner" id="beginner">
@@ -1036,7 +1037,7 @@
 							<div data-step class="step">
 								<div class="step4">
 									<div class="step4-calendar">
-										<div style="margin-bottom: 12px;">Course schedule</div>
+										<div class="title__step" style="margin-bottom: 12px;">Course schedule</div>
 										<div class="step4-calendar__week">
 
 											<table>
@@ -1435,7 +1436,9 @@
 		</section>
 		<!-- Got Animation-block -->
 		<section class="people-animation">
-			<video src="{{'assets/images/office_people.webm' | theme}}" muted loop autoplay></video>
+		<div class="container__video">
+		<video src="{{'assets/images/office_people.webm' | theme}}" muted loop autoplay></video>
+		</div>
 		</section>
 		<!-- Got questions -block -->
 		<section class="got-questions">
@@ -1462,7 +1465,7 @@
 							<input type="email" id="email" name="email" placeholder="Email">
 							<textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
 
-							<button id="{{questionForm}}SubmitButton" type="submit">Submit</button>
+							<button id="{{questionForm}}SubmitButton" type="submit" class="submitBtn">Submit</button>
 						</form>
 					</div>
 					<div class="got-questions__image">

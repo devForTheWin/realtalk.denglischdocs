@@ -4,8 +4,7 @@ $accent: #FFBA0A // Accent Color
 $fontsize: 21px // Body Font Size
 $textcolor: #303030 // Text Color
 $howBackground: #FFFBF1 //how does it work -block
-$lineheight: 1.65 // Document Line Height
-$userfont: montserrat, sans-serif // User Font Family
+$userfont: Montserrat, sans-serif // User Font Family
 $width: 1140px
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
@@ -15,7 +14,7 @@ $gutter: $grid-gutter-width
 $container-padding-x: 0
 
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)
-$container-max-widths:(sm: 540px, md: 720px, lg: 1130px, xl: 1139px, xxl: 1140px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 1130px, xl: 1139px, xxl: 1140px)
 // IMPORT SECTION
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
@@ -34,7 +33,6 @@ $container-max-widths:(sm: 540px, md: 720px, lg: 1130px, xl: 1139px, xxl: 1140px
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
-// font-family: 'Crimson Pro', serif; font-family: 'Montserrat', sans-serif;
 @include font('crimson-pro', normal, 200, '../fonts/CrimsonPro-ExtraLight.woff2')
 @include font('montserrat', normal, 400, '../fonts/Montserrat-Regular.woff2')
 @include font('montserrat', normal, 500, '../fonts/Montserrat-Medium.woff2')
@@ -45,8 +43,7 @@ $container-max-widths:(sm: 540px, md: 720px, lg: 1130px, xl: 1139px, xxl: 1140px
 	color: #666
 
 ::selection
-	background-color: $accent
-	color: #fff
+	background-color: transparent
 
 input, textarea
 	outline: none
@@ -58,70 +55,77 @@ input, textarea
 body
 	font-family: $userfont
 	font-size: $fontsize
-	line-height: $lineheight
 	color: $textcolor
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
 
 body,
-html 
+html
 	min-height: 100%
 
-
-::placeholder 
-	width: 151px
+::placeholder
 	height: 20px
 	font-family: 'Montserrat'
 	font-style: normal
-	font-weight: 400
+	font-weight: 500
 	font-size: 13px
-	line-height: 20px
+	line-height: 19.5px
 	letter-spacing: 0.01em
+	color: #727272 !important
+
+textarea
+		resize: none
+		font-size: 13px
+		color: #727272
+
+input,
+textarea
 	color: #727272
+	font-size: 13px
 
-
-a 
+a
 	text-decoration: none
 	color: #000000
 
+a:hover
+	color: #000000
 
-img 
+img
 	width: 100%
 
-
 input,
-textarea 
+textarea
 	outline: none
 
-
-.overflow 
+.overflow
 	overflow: hidden
 	position: absolute
 	border-radius: 12px
 
-
-.text 
+.text
 	font-family: 'Crimson Pro', serif
 	font-style: normal
-	font-weight: 200
+	font-weight: 300
 	font-size: 21px
 	line-height: 27.3px
 	letter-spacing: 0.01em
-	color: rgba(48, 48, 48, 1)
+	color: #303030
 
-
-.title 
+.title
 	height: 46px
-	font-family: 'Montserrat'
+	font-family: 'Montserrat', sans-serif
 	font-style: normal
 	font-weight: 400
 	font-size: 33px
 	line-height: 46.2px
 	color: #000000
 
-
-.wrapper 
+.wrapper
 	min-height: 100%
 	position: relative
 	width: 100%
+
+	.btn
+		border-radius: 12px
+		border: 1px solid #FFBA0A
