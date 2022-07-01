@@ -58,7 +58,7 @@ ul {
 
 .text-block .banner-text {
 	border-radius: 0;
-	font-family: Crimson Pro,serif;
+	font-family: Crimson Pro, serif;
 	font-size: 21px;
 	height: 135px;
 	letter-spacing: .01em;
@@ -337,8 +337,6 @@ ul {
 	overflow: hidden;
 }
 
-/*Swiper*/
-/**/
 .swiper {
 	width: 100%;
 }
@@ -347,6 +345,20 @@ ul {
 	text-align: center;
 	font-size: 18px;
 	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
 }
 
 .swiper-slide img {
@@ -932,7 +944,7 @@ ul {
 	background: url(../images/greeds/grid14.svg);
 	content: "";
 	height: 232px;
-	left: 23.3em;
+	left: 23.25em;
 	position: absolute;
 	top: 14.25em;
 	width: 321.3px;
@@ -1445,11 +1457,14 @@ span.real-talk__arrow.active {
 }
 
 .background-arrow {
-	height: 1200px;
-	left: 12em;
+	// height: 1200px;
+	height: 921.49px;
+	left: 13.5em;
 	position: absolute;
-	top: 17em;
-	width: 551px;
+	top: 15em;
+	width: 779.81px;
+	width: 521px;
+	transform: rotate(3deg);
 }
 
 /**/
@@ -1581,6 +1596,10 @@ span.arrow.active {
 
 .step {
 	display: none;
+}
+
+.step1 .multi-step__btn-box button{
+	margin-left: 78%;
 }
 
 .multi-step__form-block__form .next-btn button:hover {
@@ -1722,8 +1741,7 @@ span.arrow.active {
 .multi-step__form-block__form .step1 input {
 	width: 100%;
 	height: 43.31px;
-	opacity: 0.2;
-	border: 1px solid #000000;
+	border: 1px solid #727272;
 	border-radius: 11px;
 	padding: 15px;
 	margin-bottom: 16px;
@@ -1741,7 +1759,9 @@ span.arrow.active {
 }
 
 .multi-step__btn-box {
-	float: right;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .multi-step__btn-box button {
@@ -1751,7 +1771,7 @@ span.arrow.active {
 	justify-content: center;
 	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 16px;
 	line-height: 22px;
 	display: flex;
@@ -1793,12 +1813,11 @@ span.arrow.active {
 }
 
 .step2 .multi-step__btn-box {
-	margin-left: 78.5%;
+	margin-top: 25px;
 }
 
 .step3 .multi-step__btn-box {
-	margin-left: 78.5%;
-	margin-top: 20px;
+	margin-top: 25px;
 }
 
 .container-xxl .option_item {
@@ -1857,8 +1876,7 @@ span.arrow.active {
 .step2 .clone-this-input input {
 	width: 100%;
 	height: 43.16px;
-	opacity: 0.2;
-	border: 1px solid #000000;
+	border: 1px solid #727272;
 	border-radius: 11px;
 	padding: 15px;
 	margin-bottom: 10px;
@@ -1993,7 +2011,6 @@ span.arrow.active {
 }
 
 .step4 .multi-step__btn {
-	margin-left: 77.6%;
 	margin-top: 59px;
 }
 
@@ -2029,10 +2046,9 @@ table th {
 }
 
 .step4 textarea {
-	border: 1px solid #000;
+	border: 1px solid #727272;
 	border-radius: 11px;
 	height: 108px;
-	opacity: .2;
 	padding: 10px;
 	position: relative;
 	top: 40px;
@@ -2099,7 +2115,7 @@ table th {
 	width: 1539px;
 }
 
-.people-animation video{
+.people-animation video {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -2171,10 +2187,9 @@ table th {
 	width: 100%;
 	height: 43.31px;
 	border-radius: 12px;
-	opacity: 0.2;
-	padding: 12px 22px;
+	padding: 12px;
 	margin-bottom: 16.04px;
-	border: 1px solid #000000;
+	border: 1px solid #727272;
 }
 
 .got-questions__action-form textarea {
@@ -2183,7 +2198,7 @@ table th {
 	border-radius: 12px;
 	margin-bottom: 23.4px;
 	opacity: 0.2;
-	padding: 12px 22px;
+	padding: 12px;
 	font-size: 12px;
 }
 
@@ -2195,18 +2210,24 @@ table th {
 	width: 124.34px;
 	padding: 11px 31.67px;
 	background: #FFCA18;
-	border: 1px solid #FFBA0A;
+	border: 1px solid #FFCA18;
 	border-radius: 12px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
+	display: flex;
+	align-items: center;
+	text-align: center;
 	letter-spacing: 0.02em;
 	color: #000000;
 }
 
-.got-questions__action-form button:hover{
+.got-questions__action-form button:hover {
 	background-color: #FFBA0A;
 	box-shadow: 0 3px 3px rgb(0 0 0 / 20%);
-	transform: translateY( -2px );
+	transform: translateY(-2px);
 }
 
 .got-questions__image-overflow {
@@ -2238,3 +2259,4 @@ table th {
 	left: 0.46px;
 	top: -74.52px;
 }
+

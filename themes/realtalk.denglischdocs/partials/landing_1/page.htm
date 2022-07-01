@@ -100,7 +100,8 @@
 
 			<div class="free100-slider">
 				<div class="hidden-container">
-					<div class="swiper mySwiper">
+
+					<div class="swiper">
 						<div class="swiper-wrapper">
 						{% for field in this.theme.first_slider %}
 							<div class="swiper-slide slider__item">
@@ -109,8 +110,10 @@
 						{% endfor %}
 						</div>
 					</div>
+
 				</div>
 			</div>
+
 		</div>
 		<!-- Bringing abroad home BLOCK-->
 		<section id="abroad" class="abroad" style='background-image: url( "{{'assets/images/Plane2.svg' | theme}}");'>
@@ -863,6 +866,7 @@
 										<button class="multi-step__btn" id="next" data-next type="button">
 											Next
 										</button>
+										
 									</div>
 								</div>
 							</div>
@@ -930,6 +934,7 @@
 									</div>
 
 									<div class="multi-step__btn-box next-btn">
+										<button class="multi-step__btn" id="prev" data-prev type="button">Prev</button>
 										<button class="multi-step__btn" data-next id="next" type="button">Next</button>
 									</div>
 								</div>
@@ -1029,6 +1034,7 @@
 										</label>
 									</div>
 									<div class="multi-step__btn-box next-btn">
+										<button class="multi-step__btn" id="prev" data-prev type="button">Prev</button>
 										<button class="multi-step__btn" id="next" data-next type="button" style="z-index: 999">Next</button>
 									</div>
 								</div>
@@ -1397,6 +1403,7 @@
 									<textarea name="add-info" id="add-info" cols="30" rows="10" placeholder="Additional information"></textarea>
 
 									<div class="multi-step__btn-box next-btn">
+										<button class="multi-step__btn" id="prev" data-prev type="button">Prev</button>
 										<button  id="{{applyForm}}SubmitButton" class="multi-step__btn" data-next type="submit">Send</button>
 									</div>
 								</div>
@@ -1480,6 +1487,4 @@
 		</section>
 	</main>
 	<!--FOOTER -->
-
-	</main>
 </div>
