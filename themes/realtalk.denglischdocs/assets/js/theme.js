@@ -327,8 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			ease: Power2.easeIn,
 			scrollTrigger: {
 				trigger: ".prepped-overflow__above",
-				start: "top 40%",
-				end: "top 40%",
+				start: "top 50%",
+				end: "top 60%",
 				toggleActions: "play none reverse none",
 			}
 		})
