@@ -1,6 +1,17 @@
-<svg width="734" height="753" viewBox="0 0 734 753" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M54.6651 551.518L64.8492 552.007L0.995589 570.286L54.6651 551.518Z" fill="#FFC107"/>
-<path d="M60.7696 574.376L48.8925 528.517L0.990478 570.286L60.7696 574.376Z" fill="#FFCA18"/>
-<path d="M54.6564 551.518L64.8405 552.008L52.6166 542.913L7.17073 567.707L54.6564 551.518Z" fill="#E3A70B"/>
-<path d="M69.9732 550.111C80.4031 547.219 93.3636 523.052 77.2615 513.571C61.1559 504.088 62.1981 523.019 73.3198 523.999C84.4414 524.979 885.609 565.114 574 105.5" stroke="#FFBA0A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9.25 9.25"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 734 753" style="enable-background:new 0 0 734 753;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFC107;}
+	.st1{fill:#FFCA18;}
+	.st2{fill:#E3A70B;}
+	
+		.st3{fill:none;stroke:#FFBA0A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:9.25,9.25;}
+</style>
+<path class="st0" d="M54.7,551.5l10.2,0.5L1,570.3L54.7,551.5z"/>
+<path class="st1" d="M60.8,574.4l-11.9-45.9L1,570.3L60.8,574.4z"/>
+<path class="st2" d="M54.7,551.5l10.2,0.5l-12.2-9.1L7.2,567.7L54.7,551.5z"/>
+<path class="st3" d="M70,550.1C83,546,89,530,82,518c-3-4-6-8-12-7c-3,0-6,3-5,7c2,5,8,7,13,7c48,2,96,2,144-3c48-4,95-5,143-17
+	c3,0,6,0,9,0c103-23,220-52,263-157c2-6,4-11,5-17c2-14,4-27,4-41c-1-11-2-21-3-32c-2-12-6-24-9-36c-10-30-23-57-39.2-83.7"/>
 </svg>

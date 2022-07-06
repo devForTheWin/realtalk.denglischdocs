@@ -1,5 +1,13 @@
-<svg width="65" height="47" viewBox="0 0 65 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.0849 23.7288L0.900802 24.218L64.7544 42.4965L11.0849 23.7288Z" fill="#FFC107"/>
-<path d="M4.98039 46.5889L16.8575 0.729865L64.7595 42.4984L4.98039 46.5889Z" fill="#FFCA18"/>
-<path d="M11.0936 23.7294L0.909543 24.2186L13.1334 15.1241L58.5793 39.9176L11.0936 23.7294Z" fill="#E3A70B"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 65 47" style="enable-background:new 0 0 65 47;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFC107;}
+	.st1{fill:#FFCA18;}
+	.st2{fill:#E3A70B;}
+</style>
+<path class="st0" d="M10.5,23.2L0.3,23.7L64.1,42L10.5,23.2z"/>
+<path class="st1" d="M4.4,46.1L16.2,0.2L64.1,42L4.4,46.1z"/>
+<path class="st2" d="M10.5,23.2L0.3,23.7l12.2-9.1L58,39.4L10.5,23.2z"/>
 </svg>
