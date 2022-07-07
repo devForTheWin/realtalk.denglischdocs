@@ -55,13 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		// isIntersecting is false when element and viewport don't overlap
 		if (entries[0].isIntersecting === true) {
 			console.log('Element has just become visible in screen');
-			swiper.mousewheel.disable();
+			swiper.mousewheel.enable();
 		}
 		else {
-			swiper.mousewheel.enable();
-
+			swiper.mousewheel.disable();
 		}
-	}, { threshold: [0.1] });
+	}, { threshold: [0.9] });
 
 	observer.observe(document.querySelector('#scroll-container'));
 
