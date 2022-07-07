@@ -102,15 +102,18 @@
 	</div>
 		<div class="first-slider" id="first-slider">
 			<div class="scroll-container" id="scroll-container">
-				<div class="swiper">
-					<div class="swiper-wrapper">
-						{% for field in this.theme.first_slider %}
-						<div class="swiper-slide slider__item">
-							<img class="slider__img" src='{{field.image | media }}' alt="slider">
-						</div>
-						{% endfor %}
-					</div>
+					<div class="carousel-slide">
+					<div class="carousel">
+			{% for field in this.theme.first_slider %}
+				<div class="carousel__item">
+						<img class="carousel__img" src='{{field.image | media }}' alt="slider">
 				</div>
+			{% endfor %}
+		</div>
+
+		
+					</div>	
+
 			</div>
 		</div>
 	<!-- Bringing abroad home BLOCK-->
@@ -610,23 +613,21 @@
 
 				</div>
 			</div>
-
 	</section>
 
 	<!-- Second Slider BLOCK-->
-	<section class="second-slider">
+	<section class="second-slider" id="second-slider">
 		<div class="second-slider__slider">
-
-			<div class="second-slider__hidden-container" id="second-swiper">
-				<div class="second-swiper">
-					<div class="swiper-wrapper">
+			<div class="second-slider__hidden-container" id="scroll-container">
+				<div class="carousel-slide">				
+					<div class="carousel">
 						{% for field in this.theme.second_slider %}
-						<div class="swiper-slide slider__item">
-							<img class="slider__img" data-swiper-parallax="20%" src='{{field.image | media }}' alt="slider">
-						</div>
+							<div class="carousel__item">
+								<img class="carousel__img"src='{{field.image | media }}' alt="slider">
+							</div>
 						{% endfor %}
 					</div>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</section>
@@ -848,7 +849,8 @@
 
 				<div class="multi-step__form-block__form">
 
-					<form data-request="{{applyForm}}::onFormSubmit" id="abroad-form" data-multi-step class="multi-step-form">
+					<form data-request="{{applyForm}}::onFormSubmit" id="abroad-form" 
+					data-multi-step class="multi-step-form">
 						{{ form_token() }}
 						<div data-step class="step">
 							<div class="step1">
@@ -1464,10 +1466,18 @@
 					</div>
 					<form data-request="{{questionForm}}::onFormSubmit" class="got-questions__action-form">
 						{{ form_token() }}
-						<div id="{{questionForm}}_forms_flash"></div>
-
-							<div class="modal" id="hide">
-  
+						{# <div id="{{questionForm}}_forms_flash"></div> #}
+<div class="control-popup modal fade" id="contentBasic" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <p>This is a very basic example of a popup...</p>
+            </div>
+        </div>
+    </div>
+</div>
+					{# <div class="modal" id="hide">
        			<div class="modal-body">
            	 	<img src="{{'assets/images/modal/man.svg' | theme}}" alt="">
            		 <div class="modal-descrip">
@@ -1488,16 +1498,18 @@
 							 </div>
 							 <button id="hideButton">Continue</button> 
            		 </div>
-        </div>
-    </div>
-						<div class="got-questions__form__initials">
+       			 </div>
+   			 </div> #}
+					<div class="got-questions__form__initials">
 							<input type="text" id="first_name" name="first_name" placeholder="First name">
 							<input type="text" id="last_name" name="last_name" placeholder="Last name">
 						</div>
 						<input type="email" id="email" name="email" placeholder="Email">
 						<textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
 
-						<button id="{{questionForm}}SubmitButton" type="submit" class="submitBtn" id="showButton">Submit</button>
+						<button id="{{questionForm}}SubmitButton" 
+						type="submit" class="submitBtn" data-toggle="modal" href="#contentBasic"
+						id="showButton">Submit</button>
 					</form>
 					
 				</div>
@@ -1511,7 +1523,7 @@
 			</div>
 		</div>
 	</section>
-</main>
-
+	<section>
+	</section>
 <!--FOOTER -->
 </div>

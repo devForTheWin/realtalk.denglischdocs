@@ -23,8 +23,9 @@ $container-max-widths: (sm: 540px, md: 720px, lg: 1130px, xl: 1139px, xxl: 1140p
 @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
 // @import 'node_modules/normalize.css/normalize.css' // npm i --save-dev normalize.css
 
+@import "node_modules/slick-carousel/slick/slick.scss"
+// @import "node_modules/slick-carousel/slick/slick-theme.scss"
 @import "node_modules/swiper/swiper-bundle"
-@import "node_modules/slick-carousel"
 
 // FONTS LOAD SECTION
 
@@ -111,7 +112,7 @@ textarea::placeholder
 textarea
 	resize: none
 	font-size: 14px
-	color: #404040
+	color: #404040!important
 
 input,
 textarea

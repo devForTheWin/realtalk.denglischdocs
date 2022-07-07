@@ -5,7 +5,7 @@ import { gsap, Power2 } from 'gsap'
 gsap.registerPlugin(ScrollTrigger, Power2);
 
 import $ from "jquery";
-import "slick-carousel"
+import "slick-carousel";
 
 // Import October CMS System Framework (requires jQuery)
 import '~/modules/system/assets/js/framework.js'
@@ -17,23 +17,59 @@ import '~/modules/system/assets/js/framework.extras.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	//Swiper Slider
-	var swiper = new Swiper('.swiper', {
-		//effect: 'fade',
-		freeMode: true,
-		mousewheel: true,
-		observer: true,
-    observeParents: true,
-		mousewheel: {
-			invert: false,
-			releaseOnEdges: true,
-			sensitivity: 2
-		},
+	//Slick Sliders
+const slider = $('.carousel');
+  function onSliderAfterChange(event, slick, currentSlide) {
+    $(event.target).data('current-slide', currentSlide);
+  } 
+  function onSliderWheel(e) {
+    var deltaY = e.originalEvent.deltaY,
+      $currentSlider = $(e.currentTarget),
+      currentSlickIndex = $currentSlider.data('current-slide') || 0; 
+    if (
+      // check when you scroll up
+      (deltaY < 0 && currentSlickIndex == 0) ||
+      // check when you scroll down
+      (deltaY > 0 && currentSlickIndex == $currentSlider.data('slider-length') - 1)
+    ) {
+      return;
+    }
 
-		// onSlideChangeEnd: function (swiperObj) {
-		// 	$('.swiper').css('scrollTop', '0');
-		// }
-	});
+    e.preventDefault();
+
+    if (e.originalEvent.deltaY < 0) {
+      $currentSlider.slick('slickPrev');
+    } else {
+      $currentSlider.slick('slickNext');
+    }
+  }
+  
+  slider.each(function(index, element) {
+    var $element = $(element);
+    // set the length of children in each loop
+    // but the better way for performance is to set this data attribute on the div.slider in the markup
+    $element.data('slider-length', $element.children().length);
+  })
+  .slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false
+  })
+  .on('afterChange', onSliderAfterChange)
+  .on('wheel', onSliderWheel);
+	
+	function disable() {
+		document.removeEventListener('mousewheel', Go);
+		document.removeEventListener('DOMMouseScroll', Go);
+		}
+		
+		function enable() {
+		document.addEventListener('mousewheel', Go);
+		document.addEventListener('DOMMouseScroll', Go);
+		}
+
 	const timeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: "#first-slider",
@@ -46,21 +82,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	// const options = {
-	// 	root: document.getElementById('swiper')
-	// }
+	const timeline2 = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#second-slider",
+			start: "top top",
+			end: `+=30%`,
+			scrub: 0.5,
+			pin: true,
+			invalidateOnRefresh: true,
+			id: "second-slider",
+		}
+	});
 
 	var observer = new IntersectionObserver(function (entries) {
-		// isIntersecting is true when element and viewport are overlapping
-		// isIntersecting is false when element and viewport don't overlap
 		if (entries[0].isIntersecting === true) {
 			console.log('Element has just become visible in screen');
-			swiper.mousewheel.enable();
+			enable();
 		}
 		else {
-			swiper.mousewheel.disable();
+			disable();
 		}
-	}, { threshold: [0.9] });
+	}, { threshold: [1] });
 
 	observer.observe(document.querySelector('#scroll-container'));
 
@@ -458,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".sync-overflow",
-			start: "top 37%",
+			start: "top 38%",
 			end: "top 60%",
 			toggleActions: "play none reverse none",
 		}
@@ -494,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		scrollTrigger: {
 			trigger: ".got-questions__image-overflow",
 			start: "top 25%",
-			end: "top 70%",
+			end: "top 40%",
 			toggleActions: "play none reverse none",
 		}
 	})
