@@ -244,11 +244,11 @@
 .why-realTalk .bus-img__grid::before {
 	background: url(../images/greeds/grid3.svg);
 	content: "";
-	height: 308px;
-	left: 36.5em;
+	background-repeat: no-repeat;
+	height: 528px;
+	left: 35.8em;
 	position: absolute;
-	top: 12.07em;
-	transform: matrix(0,-1,-1,0,0,0);
+	top: 7.1em;
 	width: 537px;
 	z-index: -1;
 }
@@ -1466,7 +1466,7 @@ for language classes? BLOCK*/
 .real-talk__toggle-content {
 	margin-top: 24px;
 	display: block;
-	margin-bottom: -112px
+	margin-bottom: -112px;
 }
 
 .real-talk__click-block {
@@ -1501,20 +1501,42 @@ span.real-talk__arrow.active {
 }
 
 .background-arrow {
-	left: 11em;
+	left: 13.3em;
 	position: absolute;
-	top: -14em;
+	top: 15.2em;
+	width: 630px;
+	transition: 1s;
+	animation: remove 1s linear 0s 1 forwards;
+  -webkit-animation: remove 1s linear 0s 1 forwards;
 }
 
-.animation-plane {
+.background-arrow2 {
 	position: absolute;
-	display: none;
-	top: 14em;
-	left: 15em;
-	transform: rotate(-15deg);
+	left: 7em;
+	top: 16em;
+	width: 770px;
+	transition: 1s;
+	animation: remove 1s linear 0s 1 forwards;
+  -webkit-animation: remove 1s linear 0s 1 forwards;
 }
 
-/**/
+.background-arrow2,
+.background-arrow{
+	animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+	50% {
+		opacity: 0;
+	}
+  100% {
+    opacity: 1;
+  }
+}
+
 /**/
 .wrapper-block {
 	width: 500px;
@@ -1645,6 +1667,9 @@ span.arrow.active {
 	display: none;
 }
 
+#prev{
+	visibility:hidden
+}
 .title__step {
 	margin-bottom: 10px;
 }
@@ -2348,26 +2373,4 @@ table th {
 	position: relative;
 	left: 0.46px;
 	top: -74.52px;
-}
-
-/*TEST*/
-
-.background-arrow svg {
-	height: 1491px;
-	width: 1239px;
-}
-
-.background-arrow .path {
-	fill: none;
-	stroke: #FFBA0A;
-	stroke-width: 2;
-	stroke-linecap: round;
-	stroke-opacity: 0;
-	transition: stroke-opacity .5s ease-in;
-	// transition-timing-function: linear;
-	transition-timing-function: ease-in-out;
-
-}
-.background-arrow .buttons-block button:hover {
-	box-shadow: inset 0px 20px 39px -18px rgba(0, 0, 0, 0.2);
 }

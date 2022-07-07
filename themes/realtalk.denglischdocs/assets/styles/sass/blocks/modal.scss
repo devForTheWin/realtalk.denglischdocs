@@ -1,0 +1,150 @@
+.modal {
+	position: absolute;
+	width: 767px;
+	height: 452px;
+	background: #FFFFFF;
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.04);
+	border-radius: 24px;
+	z-index: 1000000;
+	top: 54px;
+	left: 376px;
+	transform: translate(-20%, -20%);
+}
+
+.modal .modal-header {
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px 18px;
+}
+
+.modal .modal-header button {
+	cursor: pointer;
+	font-size: 22px;
+	color: #21202c;
+	background: transparent;
+}
+
+.modal .modal-body {
+	display: flex;
+	flex-direction: row;
+}
+
+.modal .modal-body img {
+	height: 239px;
+	position: relative;
+	width: 190.76px;
+	position: absolute;
+	left: 13.69%;
+	right: 61.44%;
+	top: 21.02%;
+	bottom: 26.11%;
+}
+
+.modal .modal-body .modal-descrip {
+	position: absolute;
+	width: 349px;
+	height: 275px;
+	left: 384px;
+	top: 88px;
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-title {
+	width: 97px;
+	height: 45px;
+	left: 384px;
+	top: 88px;
+}
+
+.modal-descrip .modal-title img {
+	border-radius: 0;
+	height: 30.9998130798px;
+	width: 30.9998149872px;
+	position: absolute;
+	top: 5px;
+	left: 108px;
+}
+
+.modal-title .text-title {
+	position: absolute;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 140%;
+	display: flex;
+	align-items: center;
+	color: #000000;
+}
+
+.modal-text .line {
+	border-top: 1px solid linear-gradient(to right, #000000 100%, #000000 0%);
+	;
+	opacity: 0.15;
+	width: 100%;
+}
+
+.modal-text p {
+	font-family: 'Crimson Pro';
+	font-style: normal;
+	font-weight: 200;
+	font-size: 21px;
+	line-height: 24px;
+	letter-spacing: 0.01em;
+	color: #303030;
+}
+
+.modal-body .modal-descrip .modal-text img {
+	position: absolute;
+	width: 22px;
+	top: 66px;
+	left: 149px;
+}
+
+.modal .modal-body button {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 18px 40px;
+	gap: 10px;
+	position: absolute;
+	width: 145px;
+	height: 46px;
+	top: 223px;
+	background: #FFFFFF;
+	border: 1px solid #FFBA0A;
+	border-radius: 15px;
+}
+
+.modal .modal-body button:hover {
+	color: #000000;
+	background-color: #FFBA0A;
+	box-shadow: 0 3px 3px rgb(0 0 0 / 20%);
+	transform: translateY(-2px);
+}
+
+.modal#hide {
+	opacity: 0;
+	transform: scale(.6);
+	pointer-events: none;
+}
+
+.modal#show {
+	opacity: 1;
+	transform: scale(1);
+	pointer-events: visible;
+}
+
+#showButton {
+	cursor: pointer;
+	position: absolute;
+	background: #21202c;
+	color: #ffffff;
+	padding: 14px 22px;
+	font-size: 18px;
+	border-radius: 8px;
+	letter-spacing: .5px;
+}

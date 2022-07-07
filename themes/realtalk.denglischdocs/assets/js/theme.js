@@ -1,8 +1,11 @@
-import { Swiper, Parallax, Mousewheel, Autoplay, EffectFade, EffectCreative } from 'swiper'
-Swiper.use([Parallax, Mousewheel, Autoplay, EffectFade, EffectCreative])
+import { Swiper, Mousewheel } from 'swiper'
+Swiper.use([ Mousewheel])
 
-import { gsap, CSSPlugin, Power2 } from 'gsap'
+import { gsap, Power2 } from 'gsap'
 gsap.registerPlugin(ScrollTrigger, Power2);
+
+import $ from "jquery";
+import "slick-carousel"
 
 // Import October CMS System Framework (requires jQuery)
 import '~/modules/system/assets/js/framework.js'
@@ -52,13 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		// isIntersecting is false when element and viewport don't overlap
 		if (entries[0].isIntersecting === true) {
 			console.log('Element has just become visible in screen');
-			swiper.mousewheel.enable();
+			swiper.mousewheel.disable();
 		}
 		else {
-			swiper.mousewheel.disable();
+			swiper.mousewheel.enable();
 
 		}
-	}, { threshold: [0.95] });
+	}, { threshold: [0.1] });
 
 	observer.observe(document.querySelector('#scroll-container'));
 
@@ -73,24 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	});
 
-	// const timeline2 = gsap.timeline({
-	// 	scrollTrigger: {
-	// 		trigger: "#second-swiper",
-	// 		start: "top top",
-	// 		end: `+=30%`,
-	// 		scrub: 0.5,
-	// 		pin: true,
-	// 		invalidateOnRefresh: true,
-	// 		id: "second-swiper",
-	// 	}
-	// });
-
 	//Read more
 	document.getElementById('convinc-btn').addEventListener("click", function () {
 		var more = document.getElementById('readMore');
 		if (more.style.display === "none") {
 			more.style.display = "block";
-			animation.play();
 		} else {
 			more.style.display = "none";
 			enBlock.style.display = "none";
@@ -99,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	//Benefits Buttons
-
 	const btnEn = document.getElementById('english');
 	const btnDe = document.getElementById('german');
 	const enBlock = document.getElementById('en');
@@ -123,22 +112,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	buttons.forEach(button => {
 		button.addEventListener('click', function () {
 			button.classList.add('btn_active');
-			// buttons.forEach(btn=>btn.classList.remove('benefits-btn.btn_active'));
-			// this.classList.add('benefits-btn.btn_active');
 		})
 	})
 	//Real Talk...block. Case example expand
 	document.getElementById('click-block').addEventListener("click", function () {
+		let arrow = document.getElementById('arrow');
+		let arrow2 = document.getElementById('arrow2');
 		var container = $(this).parents('.container-xxl');
 		container.find('.real-talk__toggle-content').slideToggle();
 		container.find('.real-talk__arrow').toggleClass('active');
-	})
 
-	// Thanks for your message!
+		if (arrow2.style.display === "none") {
+			arrow2.style.display = "block";
+			arrow.style.display = "none";
+		} else {
+			arrow.style.display = "block";
+			arrow2.style.display = "none";
+		}
+	})
+	gsap.to(".background-arrow ", {
+		ease: Power2.easeIn,
+	})
 
 	// multi step form
 	const multiStepForm = document.querySelector("[data-multi-step]")
 	const formSteps = [...multiStepForm.querySelectorAll("[data-step]")]
+	const progress = document.getElementById("progress")
 	const nextBtns = document.getElementById("next")
 	const progressSteps = document.querySelectorAll(".step-link")
 
@@ -181,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//progress steps
 	function showCurrentProgress() {
 		progressSteps.forEach((progressStep, index) => {
-			if (index == currentStep) {
+			if (index === currentStep) {
 				progressStep.classList.add("step-link__active");
 			} else {
 				progressStep.classList.remove("step-link__active");
@@ -192,13 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	progressSteps.forEach((progress, index) => {
 		progress.addEventListener('click', () => {
 			formSteps.forEach((content) => {
-				content.classList.remove('active');
+				content.classList.remove('active');	
 			});
 			progressSteps.forEach((progress) => {
 				progress.classList.remove('step-link__active');
 			});
 			formSteps[index].classList.add('active');
-			progressSteps[index].classList.add('step-link__active');
+			progressSteps[index].classList.add('step-link__active');			
 		})
 	})
 
@@ -501,98 +500,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
+	//Modal Window
+const modal = document.querySelector('.modal');
+const hideButton = document.getElementById('hideButton');
+const showButton = document.getElementById('showButton');
 
-	/////////
-	var path = document.getElementsByClassName('path').item(0),
-		rightBtn = document.getElementsByClassName('right').item(0),
-		clickFlag = false;
+hideButton.addEventListener('click', hideModal);
+showButton.addEventListener('click', showModal);
 
-	var dashDrawInterval;
+function hideModal() {
+    modal.id = 'hide';
+}
 
-	// Starting and pausing animation
-
-	// From right
-	rightBtn.addEventListener("click", function () {	
-		clickFlag = !clickFlag;
-		clickFlag ? animateDashedPath(path, 10, 3000, 'right') : clearInterval(dashDrawInterval);
-
-	})
-
-	// Animates the given path element with given dash length, animation duration and direction 
-	function animateDashedPath(path, dashLength, animationDuration, animationDirection) {
-
-		var pathLength = path.getTotalLength(),
-			numberOfSteps = Math.round(pathLength / (dashLength * 2) + 1),
-			stepDuration = animationDuration / numberOfSteps,
-			doublePath = path.getTotalLength() * 2;
-
-		// Build the dash array so we don't have to do it manually
-		var dashArray = [];
-		for (var i = numberOfSteps; i > 0; i--) {
-			dashArray.push(dashLength);
-			dashArray.push(dashLength);
-		}
-		dashArray.push(pathLength);
-
-		// Animation start conditions
-		path.setAttribute("stroke-dasharray", dashArray.join(" "));
-		path.setAttribute("stroke-dashoffset", -pathLength);
-
-		// Animating dash until it is full 
-		// From right to left
-		function dashAnimateRight() {
-			var path = document.getElementById('path');
-
-			path.style.strokeOpacity = 1;
-			pathLength += dashLength * 2;
-			path.setAttribute("stroke-dashoffset", -pathLength);
-			if (pathLength > doublePath) {
-				clearInterval(dashDrawInterval);
-			} else {
-				path.style.display = "none";
-			}
-		}
-
-		if (animationDirection === 'right') {
-			dashDrawInterval = setInterval(dashAnimateRight, stepDuration);
-		}
-	}
-
-	let tween; // global so both handlers can access it
-
-	document.getElementById("click-block").addEventListener("click", function () {
-		var plane = document.getElementById('animation-plane');
-		plane.style.display = "block";
-
-		if (tween) { // Not first time:
-			tween.play(); // Continue from where it was paused
-			return;
-		}
-		gsap.registerPlugin(MotionPathPlugin);
-		let myPath = document.querySelector("#path");
-
-		tween = gsap.to("#animation-plane", {
-			paused: true,
-			position: "fixed",
-			duration: 3,
-			// repeatDelay: 3,
-			yoyo: true,
-			// ease: "Power1.easeIn",
-			motionPath: {
-				path: myPath,
-				align: myPath,
-				autoRotate: true,
-				alignOrigin: [0.5, 0.5]
-			}
-		});
-
-	});
-
-	document.getElementById("click-block").addEventListener("click", function () {
-		if (tween) {
-			tween.restart();
-		} else
-			tween.stop();
-	});
+function showModal() {
+    modal.id = 'show';
+}
 
 });

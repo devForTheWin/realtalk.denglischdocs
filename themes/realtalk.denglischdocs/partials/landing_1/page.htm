@@ -701,20 +701,11 @@
 	<section class="real-talk">
 		<div class="container-xxl">
 			<div class="real-talk__photo-block">
-				<div class="background-arrow" id="way">
-					{# <img src="{{'assets/images/path5.svg' | theme}}"> #}
-					<svg viewBox="0 0 1200 300" xml:space="preserve" id="svg">
-						
-						<path  id="path" class="path" d="M120.7,12.4c0,0-98.3,127.9-64.5,273.8S192.5,520.4,224,547.9s105.6,95,209.1,149.9
-						c103.5,54.9,149.9,89,183.7,89c11.2,0,15.7-17,6.5-18.8c-4-0.8-15-3.2-20.4,13.6c-5,15.7,7.1,30.2,42.5,48.8"/>
-
-						<g id="animation-plane" class="animation-plane">
-							<path d="M10.4716 23.2418L0.287519 23.731L64.1411 42.0095L10.4716 23.2418Z" fill="#FFC107" />
-							<path d="M4.36711 46.1001L16.2442 0.241095L64.1462 42.0096L4.36711 46.1001Z" fill="#FFCA18" />
-							<path d="M10.4803 23.2419L0.296263 23.7311L12.5201 14.6367L57.966 39.4302L10.4803 23.2419Z"
-								fill="#E3A70B" />
-						</g>
-					</svg>
+				<div class="background-arrow" id="arrow">
+					<img src="{{'assets/images/path5.svg' | theme}}">
+				</div>
+				<div class="background-arrow2"  id="arrow2" style="display: none;">
+					<img src="{{'assets/images/Plane7.svg' | theme}}">
 				</div>
 				<div class="real-talk__under-photo__grid">
 					<div class="real-talk-overflow__under overflow">
@@ -859,7 +850,6 @@
 
 					<form data-request="{{applyForm}}::onFormSubmit" id="abroad-form" data-multi-step class="multi-step-form">
 						{{ form_token() }}
-
 						<div data-step class="step">
 							<div class="step1">
 								<input type="text" id="school_name" name="school_name" placeholder="School name">
@@ -1474,7 +1464,32 @@
 					</div>
 					<form data-request="{{questionForm}}::onFormSubmit" class="got-questions__action-form">
 						{{ form_token() }}
-						{# <div id="{{questionForm}}_forms_flash"></div> #}
+						<div id="{{questionForm}}_forms_flash"></div>
+
+							<div class="modal" id="hide">
+  
+       			<div class="modal-body">
+           	 	<img src="{{'assets/images/modal/man.svg' | theme}}" alt="">
+           		 <div class="modal-descrip">
+							 	<div class="modal-title">
+								 <p class="text-title">Great!</p>
+								<img src="{{'assets/images/modal/gal.svg' | theme}}" alt="">
+							 </div>
+							 <div class="modal-text">
+							 <p class="line"></p>
+							 <p>
+							 	Thank you for taking the time <br>
+								to fill out the form! We’ll carefully<br>
+								review the information and<br>
+								get back to you within two days.<br>
+							 </p>
+							 <p>Have a great day!</p>
+							 <img src="{{'assets/images/modal/modal_sun.svg' | theme}}" alt="">
+							 </div>
+							 <button id="hideButton">Continue</button> 
+           		 </div>
+        </div>
+    </div>
 						<div class="got-questions__form__initials">
 							<input type="text" id="first_name" name="first_name" placeholder="First name">
 							<input type="text" id="last_name" name="last_name" placeholder="Last name">
@@ -1482,8 +1497,9 @@
 						<input type="email" id="email" name="email" placeholder="Email">
 						<textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
 
-						<button id="{{questionForm}}SubmitButton" type="submit" class="submitBtn">Submit</button>
+						<button id="{{questionForm}}SubmitButton" type="submit" class="submitBtn" id="showButton">Submit</button>
 					</form>
+					
 				</div>
 				<div class="got-questions__image">
 					<div class="got-questions__image-holder">
@@ -1496,5 +1512,6 @@
 		</div>
 	</section>
 </main>
+
 <!--FOOTER -->
 </div>
