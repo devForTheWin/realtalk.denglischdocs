@@ -2,10 +2,11 @@ import { Swiper, Mousewheel } from 'swiper'
 Swiper.use([ Mousewheel])
 
 import { gsap, Power2 } from 'gsap'
-gsap.registerPlugin(ScrollTrigger, Power2);
+gsap.registerPlugin(ScrollTrigger, Power2 );
 
 import $ from "jquery";
 import "slick-carousel";
+
 
 // Import October CMS System Framework (requires jQuery)
 import '~/modules/system/assets/js/framework.js'
@@ -18,14 +19,14 @@ import '~/modules/system/assets/js/framework.extras.js'
 document.addEventListener('DOMContentLoaded', () => {
 
 	//Slick Sliders
-const slider = $('.carousel');
+	const slider = $('.carousel');
   function onSliderAfterChange(event, slick, currentSlide) {
-    $(event.target).data('current-slide', currentSlide);
+    $(event.target).data('first-slider', currentSlide);
   } 
   function onSliderWheel(e) {
     var deltaY = e.originalEvent.deltaY,
       $currentSlider = $(e.currentTarget),
-      currentSlickIndex = $currentSlider.data('current-slide') || 0; 
+      currentSlickIndex = $currentSlider.data('first-slider') || 0; 
     if (
       // check when you scroll up
       (deltaY < 0 && currentSlickIndex == 0) ||
@@ -46,8 +47,7 @@ const slider = $('.carousel');
   
   slider.each(function(index, element) {
     var $element = $(element);
-    // set the length of children in each loop
-    // but the better way for performance is to set this data attribute on the div.slider in the markup
+
     $element.data('slider-length', $element.children().length);
   })
   .slick({
@@ -55,21 +55,13 @@ const slider = $('.carousel');
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
-    arrows: false
+    arrows: false,
+		pauseOnHover: true
   })
   .on('afterChange', onSliderAfterChange)
   .on('wheel', onSliderWheel);
-	
-	function disable() {
-		document.removeEventListener('mousewheel', Go);
-		document.removeEventListener('DOMMouseScroll', Go);
-		}
-		
-		function enable() {
-		document.addEventListener('mousewheel', Go);
-		document.addEventListener('DOMMouseScroll', Go);
-		}
 
+//тут я останавливаю слайдер в топе страницы
 	const timeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: "#first-slider",
@@ -94,28 +86,18 @@ const slider = $('.carousel');
 		}
 	});
 
+	//я пыталась отследить входные данные слайдера и заблокировать преждевременный скролл
 	var observer = new IntersectionObserver(function (entries) {
 		if (entries[0].isIntersecting === true) {
 			console.log('Element has just become visible in screen');
-			enable();
+			$('.first-slider').slick('unslick');
 		}
 		else {
-			disable();
+			enable();
 		}
-	}, { threshold: [1] });
+	}, { threshold: [0.3] });
 
 	observer.observe(document.querySelector('#scroll-container'));
-
-
-	const swiper2 = new Swiper('.second-swiper', {
-		direction: "horizontal",
-		freeMode: true,
-		mousewheel: true,
-		mousewheel: {
-			invert: false,
-			releaseOnEdges: true
-		},
-	});
 
 	//Read more
 	document.getElementById('convinc-btn').addEventListener("click", function () {
@@ -556,5 +538,16 @@ function hideModal() {
 function showModal() {
     modal.id = 'show';
 }
+
+const scrollContainer = document.querySelector("test-container");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+});
+
+
+
+
 
 });
