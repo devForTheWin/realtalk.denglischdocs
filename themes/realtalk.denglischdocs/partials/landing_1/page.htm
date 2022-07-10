@@ -20,7 +20,8 @@
 		<div class="container-xxl">
 			<div class="content-block">
 				<div class="tag-title__block">
-					<img class="tag-title" src="{{'assets/images/gutten-tag__title.svg' | theme}}" alt="">
+					{# <img class="tag-title" src="{{'assets/images/gutten-tag__title.svg' | theme}}" alt=""> #}
+					<h2 class="title guten-title">Guten Tag, Y'all!</h2>
 					<div class="overflow_for_smile">
 						<img class="tag-smile" src="{{'assets/images/ezgif.gif' | theme}}" alt="smile">
 					</div>
@@ -210,13 +211,11 @@
 			<div class="sibling-description__block">
 				<h2 class="title">Liebling sibling</h2>
 				<div class="sibling__description-text text">
-					<p class="block-line">
-						English is a Germanic language.<br>
-					<div class="revel2">
+					<p class="block-line">English is a Germanic language.</p>
+						<div class="revel2">
 						<img src="{{'assets/images/icon/Marker2.svg' | theme}}" alt="">
-					</div>
-					</p>
-					<p>
+						</div>
+					<p class="descript">
 						One study says that about 130,000 words in<br>
 						modern English derive from Germanic languages.<br>
 						In fact, about 60% of most commonly used<br>
@@ -492,7 +491,7 @@
 						<div class="benefits-btn" id="english">
 							<a>Benefits of English</a>
 						</div>
-						<div class="benefits-btn" id="german">
+						<div class="benefits-btn benefits-btn__german btn_active" id="german">
 							<a>Benefits of German</a>
 						</div>
 					</div>
@@ -505,7 +504,7 @@
 					<ul style='list-style-image: url( "{{' assets/images/list-circle.svg' | theme}}");'>
 						<li class="text">
 							<p>
-								<strong>The most widely spoken native language in Europe:</strong><br>
+								<span class="strong">The most widely spoken native language in Europe:</span class="strong"><br>
 								Even though English is the most spoken language in the EU,<br>
 								German is number one on the continent when it comes<br>
 								to languages spoken by native speakers. The German<br>
@@ -517,7 +516,7 @@
 						</li>
 						<li class="text">
 							<p>
-								<strong>German is the gateway to a world-class higher education:</strong><br>
+								<span class="strong">German is the gateway to a world-class higher education:</span class="strong"><br>
 								Germany has more than 380 universities with 17,000<br>
 								study programs that rank among the best in the world.<br>
 								Year after year, Germany ranks as one of the most popular<br>
@@ -533,7 +532,7 @@
 						</li>
 						<li class="text">
 							<p>
-								<strong>Germany is a go-to destination:</strong><br>
+								<span class="strong">Germany is a go-to destination:</span class="strong"><br>
 								Germany is the second most popular destination for expats<br>
 								in the world. In 2019, almost two million people moved<br>
 								to Germany, and around 400,000 of these people were students.<br>
@@ -541,7 +540,7 @@
 						</li>
 						<li class="text">
 							<p>
-								<strong>Germany is an economic powerhouse:</strong><br>
+								<span class="strong">Germany is an economic powerhouse:</span class="strong"><br>
 								Germany is the largest economy in the EU, with a gross<br>
 								domestic product (GDP) of 3.73 trillion USD, which is the 4th<br>
 								largest worldwide. The country is always on the front line<br>
@@ -562,7 +561,7 @@
 					<ul style='list-style-image: url( "{{' assets/images/list-circle.svg' | theme}}");'>
 						<li class="text">
 							<p>
-								<strong>The gateway to global success:</strong><br>
+								<span class="strong">The gateway to global success:</span class="strong"><br>
 								Approximately 400 million people around the world<br>
 								speak English as their first language. What’s more,<br>
 								English is the “second language” for the rest of the world.<br>
@@ -575,7 +574,7 @@
 						</li>
 						<li class="text">
 							<p>
-								<strong>The gateway to a world-class higher education:</strong><br>
+								<span class="strong">The gateway to a world-class higher education:</span class="strong"><br>
 								Many students from around the world desire to earn<br>
 								an advanced degree from one of the 6,000 colleges and<br>
 								universities in the US or those from other English-speaking<br>
@@ -588,7 +587,7 @@
 						</li>
 						<li class="text">
 							<p>
-								<strong>The gateway to a successful career:</strong><br>
+								<span class="strong">The gateway to a successful career:</span class="strong"><br>
 								In today’s society, most employers expect employees to be able<br>
 								to speak fluent English. This may not be fair, but it is the reality.<br>
 								Effective and confident communication in English is greatly<br>
@@ -598,7 +597,7 @@
 						</li>
 						<li class="text">
 							<p>
-								<strong>The language of the media:</strong><br>
+								<span class="strong">The language of the media:</span class="strong"><br>
 								English content dominates the internet, and many of the world’s<br>
 								biggest media outlets, including television, movies, newspapers,<br>
 								magazines, and radio. Thus, knowing English grants you more<br>
@@ -743,7 +742,7 @@
 
 					<div class="real-talk__toggle-content" style="display: none;">
 						<p>
-							<span style=" text-transform: uppercase; color: #FFBA0A;">ela:</span>
+							<span>ela:</span>
 							If your class is studying Romeo and Juliet by Shakespeare,<br>
 							your class can be partnered with an exchange class that is<br>
 							studying Romeo and Juliet too. Or, if your class is studying<br>
@@ -752,7 +751,7 @@
 							were derived and how they changed over time.<br>
 						</p>
 						<p>
-							<span style="text-transform: uppercase; color: #FFBA0A;">math:</span>
+							<span>math:</span>
 							If your class is studying the Pythagorean theorem,<br>
 							German and American students can work together to find<br>
 							the relation between the sides of a right-angled triangle.<br>
@@ -761,14 +760,14 @@
 							the Brandenburg Gate.<br>
 						</p>
 						<p>
-							<span style="text-transform: uppercase; color: #FFBA0A;">social studies:</span>
+							<span>social studies:</span>
 							If your class is studying the Holocaust,<br>
 							German and American students can work together to discuss<br>
 							certain events that led to this human tragedy.<br>
 						</p>
 
 						<p>
-							<span style="text-transform: uppercase; color: #FFBA0A;">science:</span>
+							<span>science:</span>
 							If your class is studying Kepler's laws of planetary<br>
 							motion, students can work together to talk about<br>
 							Johannes Kepler.<br>
@@ -818,7 +817,8 @@
 		</div>
 	</section>
 	<!-- Multi Step Form-Block -->
-	<section class="multi-step" id="apply">
+	<section id="apply"></section>
+	<section class="multi-step">
 		<div class="container-xxl">
 			<div class="multi-step__holder">
 				<div class="image-title">
@@ -944,37 +944,37 @@
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="english[]" id="beginner" value="A1: Beginner">
 										<div class="option_inner">
-											<div class="name"><span style="color:#FFBA0A">A1:</span> Beginner</div>
+											<div class="name"><span>A1:</span> Beginner</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="english[]" id="elementary" value="A2: Elementary">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">A2:</span> Elementary</div>
+											<div class="name"><span>A2:</span> Elementary</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="english[]" id="intermediate" value="B1: Intermediate">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">B1:</span> Intermediate</div>
+											<div class="name"><span>B1:</span> Intermediate</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox">
 										<div class="option_inner " name="english[]" id="up-intermediate" value="B2: Upper intermediate">
-											<div class="name"><span style="color:#FFBA0A">B2:</span> Upper intermediate</div>
+											<div class="name"><span>B2:</span> Upper intermediate</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="english[]" id="advanced" value="C1: Advanced">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">C1:</span> Advanced</div>
+											<div class="name"><span>C1:</span> Advanced</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="english[]" id="near-native" value="C2: Near-native">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">C2:</span> Near-native</div>
+											<div class="name"><span>C2:</span> Near-native</div>
 										</div>
 									</label>
 									<label class="native-speaker">
@@ -990,37 +990,37 @@
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="german[]" value="A1: Beginner" id="beginner">
 										<div class="option_inner">
-											<div class="name"><span style="color:#FFBA0A">A1:</span> Beginner</div>
+											<div class="name"><span>A1:</span> Beginner</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="german[]" value="A2: Elementary" id="elementary">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">A2:</span> Elementary</div>
+											<div class="name"><span>A2:</span> Elementary</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="german[]" value="B1: Intermediate" id="intermediate">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">B1:</span> Intermediate</div>
+											<div class="name"><span>B1:</span> Intermediate</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox">
 										<div class="option_inner " name="german[]" value="B2: Upper intermediate" id="Upper intermediate">
-											<div class="name"><span style="color:#FFBA0A">B2:</span> Upper intermediate</div>
+											<div class="name"><span>B2:</span> Upper intermediate</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="german[]" value="C1: Advanced" id="advanced">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">C1:</span> Advanced</div>
+											<div class="name"><span>C1:</span> Advanced</div>
 										</div>
 									</label>
 									<label class="option-step3_item">
 										<input type="checkbox" class="checkbox" name="german[]" value="C2: Near-native" id="near-native">
 										<div class="option_inner ">
-											<div class="name"><span style="color:#FFBA0A">C2:</span> Near-native</div>
+											<div class="name"><span>C2:</span> Near-native</div>
 										</div>
 									</label>
 									<label class="native-speaker">
@@ -1485,6 +1485,6 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<!--FOOTER -->
 	</div>

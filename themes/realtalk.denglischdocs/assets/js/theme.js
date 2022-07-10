@@ -74,17 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	const timeline2 = gsap.timeline({
-		scrollTrigger: {
-			trigger: "#second-slider",
-			start: "top top",
-			end: `+=30%`,
-			scrub: 0.5,
-			pin: true,
-			invalidateOnRefresh: true,
-			id: "second-slider",
-		}
-	});
+	// const timeline2 = gsap.timeline({
+	// 	scrollTrigger: {
+	// 		trigger: "#second-slider",
+	// 		start: "top top",
+	// 		end: `+=30%`,
+	// 		scrub: 0.5,
+	// 		pin: true,
+	// 		invalidateOnRefresh: true,
+	// 		id: "second-slider",
+	// 	}
+	// });
 
 	//я пыталась отследить входные данные слайдера и заблокировать преждевременный скролл
 	var observer = new IntersectionObserver(function (entries) {
@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const progress = document.getElementById("progress")
 	const nextBtns = document.getElementById("next")
 	const progressSteps = document.querySelectorAll(".step-link")
+	const progressStepsBefore = document.querySelectorAll("li:before")
 
 	let active = 1;
 
@@ -205,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		progressSteps.forEach((progressStep, index) => {
 			if (index === currentStep) {
 				progressStep.classList.add("step-link__active");
+				
 			} else {
 				progressStep.classList.remove("step-link__active");
 			}
@@ -220,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				progress.classList.remove('step-link__active');
 			});
 			formSteps[index].classList.add('active');
-			progressSteps[index].classList.add('step-link__active');			
+			progressSteps[index].classList.add('step-link__active');
 		})
 	})
 
@@ -243,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		scrollTrigger: {
 			trigger: ".revel",
 			toggleClass: 'active',
-			start: "top 60.5%",
+			start: "top 77%",
 			end: "top 20%",
 			toggleActions: "play none reverse none",
 		}
@@ -253,8 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		scrollTrigger: {
 			trigger: ".revel2",
 			toggleClass: 'active',
-			start: "top 45%",
-			// end: "top 0%",
+			start: "top 49%",
+			end: "top 30%",
 		}
 	})
 
@@ -264,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".triggerToRightDown",
-			start: "top 21%",
+			start: "top 16.5%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
@@ -275,54 +277,50 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".trigerToLeftUp",
-			start: "top 51%",
+			start: "top 52%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".trigerToLeftUp2", {
 		x: -20,
 		y: -20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".trigerToLeftUp2",
-			start: "top 23%",
-			end: "top 40%",
+			start: "top 16.5%",
+			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".abroad-overflow_under ", {
 		y: 20,
 		x: -20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".abroad-overflow_under",
-			start: "top 15%",
+			start: "top 17.7%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".abroad-overflow ", {
 		x: 20,
 		y: -20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".abroad-overflow",
-			start: "top 43%",
+			start: "top 52%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".paving-overflow__under", {
 		x: 20, y: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".paving-overflow__under",
-			start: "top 21%",
+			start: "top 24%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
@@ -333,23 +331,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".paving-overflow__above",
-			start: "top 48%",
+			start: "top 56.5%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".sibling-overflow ", {
 		y: -20, x: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".sibling-overflow",
-			start: "top 48.5%",
+			start: "top 56.5%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".sibling-overflow_under ", {
 		y: 20, x: -20,
 		ease: Power2.easeIn,
@@ -360,14 +356,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".beyond-overflow__under", {
 		x: 20,
 		y: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".beyond-overflow__under",
-			start: "top 20%",
+			start: "top 22%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
@@ -378,43 +373,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".beyond-overflow__above",
-			start: "top 48%",
+			start: "top 57%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".practice-overflow_under", {
 		y: 20,
 		x: -20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".practice-overflow_under",
-			start: "top 20%",
+			start: "top 23%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".practice-overflow ", {
 		y: -20,
 		x: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".practice-overflow",
-			start: "top 46%",
+			start: "top 55%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".prepped-overflow__under", {
 		x: 20,
 		y: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".prepped-overflow__under",
-			start: "top 20%",
+			start: "top 23%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 
@@ -426,18 +418,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".prepped-overflow__above",
-			start: "top 47%",
+			start: "top 56%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
 	gsap.to(".diverse-overflow", {
 		y: -20, x: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".diverse-overflow",
-			start: "top 33%",
+			start: "top 39%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
@@ -449,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".real-talk-overflow__under",
-			start: "top 13%",
+			start: "top 18%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 
@@ -461,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".real-talk-overflow__above",
-			start: "top 41%",
+			start: "top 52%",
 			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
@@ -472,8 +463,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".sync-overflow_under",
-			start: "top 11%",
-			end: "top 60%",
+			start: "top 36%",
+			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
@@ -481,35 +472,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		y: -20, x: 20,
 		ease: Power2.easeIn,
 		scrollTrigger: {
+			markers: true,
 			trigger: ".sync-overflow",
-			start: "top 38%",
-			end: "top 60%",
+			start: "top 66.5%",
+			end: "top 70%",
 			toggleActions: "play none reverse none",
 		}
 	})
-
-	// gsap.to(".multi-step__form-block__bus__overflow", {
-	// 	y: -20,
-	// 	x: 20,
-	// 	ease: Power2.easeIn,
-	// 	scrollTrigger: {
-	// 		trigger: ".multi-step__form-block__bus__overflow",
-	// 		start: "top 50%",
-	// 		end: "top 60%",
-	// 		toggleActions: "play none reverse none",
-	// 	}
-	// })
-
-	// gsap.to(".multi-step__form-block__everybody-img", {
-	// 	y: 20, x: -20,
-	// 	ease: Power2.easeIn,
-	// 	scrollTrigger: {
-	// 		trigger: ".multi-step__form-block__everybody-img",
-	// 		start: "top 40%",
-	// 		end: "top 50%",
-	// 		toggleActions: "play none reverse none",
-	// 	}
-	// })
 
 	gsap.to(".got-questions__image-overflow", {
 		y: 20,
@@ -517,8 +486,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: Power2.easeIn,
 		scrollTrigger: {
 			trigger: ".got-questions__image-overflow",
-			start: "top 25%",
-			end: "top 40%",
+			start: "top 40%",
+			end: "top 50%",
 			toggleActions: "play none reverse none",
 		}
 	})
@@ -545,9 +514,6 @@ scrollContainer.addEventListener("wheel", (evt) => {
     evt.preventDefault();
     scrollContainer.scrollLeft += evt.deltaY;
 });
-
-
-
 
 
 });
